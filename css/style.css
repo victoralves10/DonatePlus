@@ -1,0 +1,173 @@
+/*
+   -----------------------------------------------------------------------------
+   VARIÁVEIS CSS
+   -----------------------------------------------------------------------------
+*/
+:root {
+    --cor-principal: #167B61;
+    --cor-secundaria: #055E47;
+    --cor-destaque: #FFC107;
+    --cor-fundo-claro: #D6F6E5;
+    --cor-fundo-escuro: #B0E6CC;
+    --cor-texto-claro: #fff;
+    --cor-texto-escuro: #333;
+    --espacamento-pequeno: 0.8rem;
+    --espacamento-medio: 1.5rem;
+    --espacamento-grande: 2.5rem;
+    --fonte-principal: 'Inter', sans-serif;
+}
+
+/*
+   -----------------------------------------------------------------------------
+   GLOBAL & BASE
+   -----------------------------------------------------------------------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+   -----------------------------------------------------------------------------
+   BARRA DE NAVEGAÇÃO
+   -----------------------------------------------------------------------------
+*/
+.barra-navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--cor-principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacamento-pequeno) var(--espacamento-grande);
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--cor-texto-claro);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.logo i {
+    color: var(--cor-destaque);
+    font-size: 2rem;
+}
+
+.links-navegacao {
+    list-style: none;
+    display: flex;
+    gap: var(--espacamento-medio);
+}
+
+.links-navegacao li a {
+    font-weight: 500;
+    padding: 0.6rem var(--espacamento-pequeno);
+    border-radius: 4px;
+    color: var(--cor-texto-claro);
+}
+
+.btn-doar {
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal) !important;
+    padding: 0.7rem 1.6rem;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-menu-mobile {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: var(--cor-texto-claro);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/*
+   -----------------------------------------------------------------------------
+   SEÇÕES GERAIS
+   -----------------------------------------------------------------------------
+*/
+.secao {
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 5rem var(--espacamento-grande);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/*
+   -----------------------------------------------------------------------------
+   SEÇÃO INÍCIO
+   -----------------------------------------------------------------------------
+*/
+.inicio.secao {
+    background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-escuro));
+    padding-top: 8rem;
+    justify-content: center;
+}
+
+.conteudo-inicio {
+    text-align: center;
+    max-width: 900px;
+}
+
+.inicio h1 {
+    font-size: 4rem;
+    margin-bottom: var(--espacamento-medio);
+    color: var(--cor-secundaria);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.inicio p {
+    font-size: 1.4rem;
+    margin-bottom: 3.5rem;
+    color: #444;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inicio img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 20px;
+}
