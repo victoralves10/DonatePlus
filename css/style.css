@@ -1,85 +1,136 @@
 /*
    -----------------------------------------------------------------------------
-   VARIÁVEIS CSS
+   VARIÁVEIS CSS - Para cores, fontes e tamanhos padrões
    -----------------------------------------------------------------------------
 */
 :root {
-    --cor-principal: #167B61;
-    --cor-secundaria: #055E47;
-    --cor-destaque: #FFC107;
-    --cor-fundo-claro: #D6F6E5;
-    --cor-fundo-escuro: #B0E6CC;
-    --cor-texto-claro: #fff;
-    --cor-texto-escuro: #333;
+    /* Cores */
+    --cor-principal: #167B61; /* Verde */
+    --cor-secundaria: #055E47; /* Verde mais escuro para textos e destaques */
+    --cor-destaque: #FFC107; /* Amarelo botões e detalhes */
+    --cor-fundo-claro: #D6F6E5; /* Verde clarinho para seções */
+    --cor-fundo-medio: #E0F8EB; /* Outro verde claro */
+    --cor-fundo-escuro: #B0E6CC; /* Verde para gradientes */
+    --cor-texto-claro: #fff; /* Texto branco */
+    --cor-texto-escuro: #333; /* Texto padrão escuro */
+    --cor-cinza-suave: #f1f1f1; /* Fundo do rodapé */
+    --cor-borda-suave: #ddd; /* Borda leve */
+    --cor-sombra-suave: rgba(0, 0, 0, 0.08); /* Sombra padrão */
+    --cor-sombra-media: rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+    --cor-sombra-profunda: rgba(0, 0, 0, 0.25); /* Sombra para elevação */
+
+    /* Fontes */
+    --fonte-principal: 'Inter', sans-serif;
+
+    /* Espaçamentos */
     --espacamento-pequeno: 0.8rem;
     --espacamento-medio: 1.5rem;
     --espacamento-grande: 2.5rem;
-    --fonte-principal: 'Inter', sans-serif;
 }
 
-/*
-   -----------------------------------------------------------------------------
-   GLOBAL & BASE
-   -----------------------------------------------------------------------------
-*/
+
+/* Reset básico de margin, padding e box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos padrão do corpo: fonte, cor, alinhamento e layout flexbox */
 body {
     font-family: var(--fonte-principal);
     color: var(--cor-texto-escuro);
     line-height: 1.6;
-    min-height: 100vh;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
     display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    flex-direction: column; /* Organiza o conteúdo em coluna / navbar, seções, rodapé */
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
+/* Estilos padrão para links: sem sublinhadon */
 a {
     color: inherit;
     text-decoration: none;
 }
 
+/* Efeito de hover para links */
+a:hover,
+a:focus {
+    color: var(--cor-secundaria); /* Cor verde mais escura para hover em links gerais */
+    outline: none;
+}
+
+/* Scroll suave e gentil */
 html {
     scroll-behavior: smooth;
 }
 
+/* Esconder os elementos da tela, mas deixar que leitores de tela ainda consigam ler*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /*
    -----------------------------------------------------------------------------
-   BARRA DE NAVEGAÇÃO
+   BARRA DE NAVEGAÇÃO - Estilos para a barra de navegação principal
    -----------------------------------------------------------------------------
 */
+
+/* Configuração da barra de navegação: fixada no topo, largura total e layout flexbox */
 .barra-navegacao {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    background-color: var(--cor-principal);
+    background-color: var(--cor-principal); /* Cor de fundo verde */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--espacamento-pequeno) var(--espacamento-grande);
-    z-index: 1000;
+    justify-content: space-between; /* Espaça logo e links */
+    align-items: center; /* Centraliza verticalmente */
+    padding: var(--espacamento-pequeno) var(--espacamento-grande); /* Padding lateral maior */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    transition: box-shadow 0.3s ease-in-out; /* Transição para a sombra no scroll */
 }
 
+/* Adiciona sombra à barra de navegação quando a página é rolada (classe adicionada via JS) */
+.barra-navegacao.rolada {
+    box-shadow: 0 4px 12px var(--cor-sombra-media); /* Sombra mais suave e elegante */
+}
+
+/* Estilos para o logo (texto e ícone) */
 .logo {
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* Logo um pouco maior */
     color: var(--cor-texto-claro);
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    transition: transform 0.3s ease; /* Transição para efeito no hover */
+}
+
+.logo:hover {
+    transform: scale(1.02); /* Pequeno zoom no hover */
 }
 
 .logo i {
-    color: var(--cor-destaque);
-    font-size: 2rem;
+    color: var(--cor-destaque); /* Ícone em tom de amarelo para contraste */
+    font-size: 2rem; /* Ícone um pouco maior */
+    transition: transform 0.3s ease; /* Transição para um pequeno efeito no hover */
 }
 
+.logo:hover i {
+    transform: rotate(10deg) scale(1.1); /* Rotação e zoom sutil no hover */
+}
+
+/* Links da barra de navegação: layout flexbox para alinhamento horizontal */
 .links-navegacao {
     list-style: none;
     display: flex;
@@ -88,86 +139,208 @@ html {
 
 .links-navegacao li a {
     font-weight: 500;
-    padding: 0.6rem var(--espacamento-pequeno);
+    padding: 0.6rem var(--espacamento-pequeno); /* Mais padding nos links */
     border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Adiciona transição no transform */
     color: var(--cor-texto-claro);
+    position: relative; /* Para o efeito de sublinhado animado */
 }
 
-.btn-doar {
-    background-color: var(--cor-destaque);
-    color: var(--cor-principal) !important;
-    padding: 0.7rem 1.6rem;
-    border-radius: 30px;
+/* Efeito de hover/focus para os links da barra de navegação: sublinhado animado */
+.links-navegacao li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%; /* Começa no centro */
+    transform: translateX(-50%); /* Garante que o sublinhado se expanda do centro */
+    background-color: var(--cor-destaque); /* Cor do sublinhado */
+    transition: width 0.3s ease-out; /* Animação da largura */
+}
+
+.links-navegacao li a:hover::after,
+.links-navegacao li a:focus::after {
+    width: 100%; /* Expande o sublinhado */
+}
+
+.links-navegacao li a:hover,
+.links-navegacao li a:focus {
+    color: var(--cor-destaque); /* Cor do texto no hover/focus */
+    background-color: transparent; /* Remove background-color do hover para o efeito de sublinhado */
+    transform: translateY(-3px); /* Pequena elevação no hover */
+}
+
+/* Estilo para o link da página atual na navegação */
+.links-navegacao li a[aria-current="page"] {
     font-weight: 700;
+    color: var(--cor-destaque);
+}
+.links-navegacao li a[aria-current="page"]::after {
+    width: 100%; /* O sublinhado já começa visível */
+}
+
+
+/* Botão "Doe Agora": estilo distinto e efeito de hover */
+.btn-doar {
+    background-color: var(--cor-destaque); /* Amarelo vibrante */
+    color: var(--cor-principal) !important; /* Texto verde escuro */
+    padding: 0.7rem 1.6rem; /* Mais padding */
+    border-radius: 30px; /* Mais arredondado */
+    font-weight: 700; /* Mais negrito */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves */
     cursor: pointer;
     border: none;
     text-align: center;
+    box-shadow: 0 3px 8px var(--cor-sombra-suave); /* Sombra inicial */
+    position: relative; /* Para o efeito de clique */
+    overflow: hidden; /* Garante que o pseudo-elemento não vaze */
 }
 
+.btn-doar:hover,
+.btn-doar:focus {
+    background-color: #FFD700; /* Amarelo um pouco mais claro no hover */
+    transform: translateY(-4px); /* Elevação sutil */
+    box-shadow: 0 8px 20px var(--cor-sombra-media); /* Sombra mais pronunciada */
+    outline: none;
+}
+
+.btn-doar:active {
+    transform: translateY(-1px); /* "Afunda" o botão ao clicar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra menor */
+}
+
+/* Efeito de "ripple" (onda) ao clicar no botão de doação */
+.btn-doar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1) translate(-50%, -50%);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.btn-doar:active::after {
+    transform: scale(20) translate(-50%, -50%);
+    opacity: 1;
+    transition: 0s; /* Reseta a transição para o clique instantâneo */
+}
+
+
+/* Botão do Menu Mobile (Hamburguer) */
 .btn-menu-mobile {
-    display: none;
+    display: none; /* Escondido por padrão, visível apenas em mobile */
     background: none;
     border: none;
-    font-size: 2.2rem;
+    font-size: 2.2rem; /* Ícone grande */
     color: var(--cor-texto-claro);
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1001; /* Acima da navbar */
+    transition: color 0.3s ease;
 }
+
+.btn-menu-mobile:hover {
+    color: var(--cor-destaque);
+}
+
 
 /*
    -----------------------------------------------------------------------------
-   SEÇÕES GERAIS
+   SEÇÕES GERAIS - Propriedades comuns a todas as seções
    -----------------------------------------------------------------------------
 */
+
+/* Estilos base para todas as seções: altura, largura, centralização e padding */
 .secao {
-    min-height: 100vh;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
     width: 100vw;
     max-width: 100vw;
     margin: 0;
-    padding: 5rem var(--espacamento-grande);
+    padding: 5rem var(--espacamento-grande); /* Aumenta o padding geral das seções */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centraliza conteúdo verticalmente */
+    align-items: center; /* Centraliza conteúdo horizontalmente */
     text-align: center;
     box-sizing: border-box;
+    scroll-snap-align: start; /* Ajuda no "scroll snapping" */
+}
+
+/* Títulos das seções */
+.secao h2 {
+    font-size: 3rem; /* Tamanho maior para os títulos */
+    margin-bottom: 3rem; /* Mais espaçamento abaixo do título */
+    color: var(--cor-secundaria); /* Cor mais escura para os títulos */
+    font-weight: 700;
+    position: relative; /* Para o efeito de sublinhado decorativo */
+    padding-bottom: 10px; /* Espaço para o ::after */
+}
+
+/* Efeito de sublinhado decorativo para os títulos das seções */
+.secao h2::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Começa com largura zero */
+    height: 5px; /* Espessura do sublinhado */
+    background-color: var(--cor-destaque); /* Cor do sublinhado */
+    bottom: 0; /* Posição abaixo do texto */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o sublinhado */
+    border-radius: 2.5px;
+    transition: width 0.6s ease-out 0.4s; /* Animação da largura com delay */
 }
 
 /*
    -----------------------------------------------------------------------------
-   SEÇÃO INÍCIO
+   SEÇÃO INÍCIO - Estilos específicos para a seção inicial
    -----------------------------------------------------------------------------
 */
+
+/* Fundo da seção Início */
 .inicio.secao {
-    background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-escuro));
-    padding-top: 8rem;
-    justify-content: center;
+    background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-escuro)); /* Gradiente suave */
+    padding-top: 8rem; /* Espaço para a barra de navegação fixa */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    position: relative; /* Para potencial efeito de paralaxe ou sobreposição */
+    overflow: hidden; /* Para garantir que as animações não transbordem */
 }
 
+/* Animação para o conteúdo da inicio */
 .conteudo-inicio {
     text-align: center;
-    max-width: 900px;
+    max-width: 900px; /* Limita a largura do texto */
 }
 
+/* Título principal da Início */
 .inicio h1 {
-    font-size: 4rem;
-    margin-bottom: var(--espacamento-medio);
-    color: var(--cor-secundaria);
+    font-size: 4rem; /* Título maior e impactante */
+    margin-bottom: var(--espacamento-medio); /* Mais espaçamento */
+    color: var(--cor-secundaria); /* Verde mais escuro */
     line-height: 1.1;
-    font-weight: 800;
+    font-weight: 800; /* Mais negrito */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil no texto */
 }
 
+/* Parágrafo da Início */
 .inicio p {
-    font-size: 1.4rem;
-    margin-bottom: 3.5rem;
+    font-size: 1.4rem; /* Parágrafo maior */
+    margin-bottom: 3.5rem; /* Mais espaçamento */
     color: #444;
-    max-width: 700px;
+    max-width: 700px; /* Limita largura do parágrafo */
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Imagem da Início */
 .inicio img {
-    max-width: 70%;
+    max-width: 70%; /* Ajusta o tamanho da imagem */
     height: auto;
-    border-radius: 20px;
+    border-radius: 20px; /* Bordas mais arredondadas */
+    box-shadow: 0 15px 40px var(--cor-sombra-media); /* Sombra mais pronunciada e elegante */
+    transform-origin: center bottom; /* Origem para a animação de escala (se fosse usar) */
 }
