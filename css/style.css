@@ -5,10 +5,10 @@
 */
 :root {
     /* Cores */
-    --cor-principal: #167B61; /* Verde */
+    --cor-principal: #167B61; /* Verde primário */
     --cor-secundaria: #055E47; /* Verde mais escuro para textos e destaques */
-    --cor-destaque: #FFC107; /* Amarelo botões e detalhes */
-    --cor-fundo-claro: #D6F6E5; /* Verde clarinho para seções */
+    --cor-destaque: #FFC107; /* Amarelo vibrante para botões e detalhes */
+    --cor-fundo-claro: #D6F6E5; /* Verde bem clarinho para seções */
     --cor-fundo-medio: #E0F8EB; /* Outro verde claro */
     --cor-fundo-escuro: #B0E6CC; /* Verde para gradientes */
     --cor-texto-claro: #fff; /* Texto branco */
@@ -29,7 +29,13 @@
 }
 
 
-/* Reset básico de margin, padding e box-sizing */
+/*
+   -----------------------------------------------------------------------------
+   GLOBAL & BASE - Estilos de reset, fonte e comportamento geral do documento
+   -----------------------------------------------------------------------------
+*/
+
+/* Reset básico de margin, padding e box-sizing para consistência */
 * {
     margin: 0;
     padding: 0;
@@ -43,29 +49,29 @@ body {
     line-height: 1.6;
     min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo em coluna / navbar, seções, rodapé */
-    overflow-x: hidden; /* Evita rolagem horizontal */
+    flex-direction: column; /* Organiza o conteúdo em coluna (navbar, seções, rodapé) */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
-/* Estilos padrão para links: sem sublinhadon */
+/* Estilos padrão para links: sem sublinhado e herança de cor */
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* Efeito de hover para links */
+/* Efeito de hover/focus para links */
 a:hover,
 a:focus {
-    color: var(--cor-secundaria); /* Cor verde mais escura para hover em links gerais */
+    color: var(--cor-secundaria); /* Cor verde mais escura para hover/focus em links gerais */
     outline: none;
 }
 
-/* Scroll suave e gentil */
+/* Comportamento de scroll suave para navegação por âncoras */
 html {
     scroll-behavior: smooth;
 }
 
-/* Esconder os elementos da tela, mas deixar que leitores de tela ainda consigam ler*/
+/* Esconder elementos visualmente mas mantê-los para leitores de tela */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -76,6 +82,60 @@ html {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/*
+   -----------------------------------------------------------------------------
+   ANIMAÇÕES PADRÃO
+   -----------------------------------------------------------------------------
+*/
+
+/* Animação de fade-in e slide-up para elementos que aparecem na rolagem */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação para elementos que aparecem da esquerda */
+@keyframes fadeInSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação para elementos que aparecem da direita */
+@keyframes fadeInSlideRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Classe base para aplicar animações de rolagem (controlada por JS) */
+.animar-ao-rolar {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animar-ao-rolar.visivel {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /*
@@ -343,4 +403,63 @@ html {
     border-radius: 20px; /* Bordas mais arredondadas */
     box-shadow: 0 15px 40px var(--cor-sombra-media); /* Sombra mais pronunciada e elegante */
     transform-origin: center bottom; /* Origem para a animação de escala (se fosse usar) */
+}
+
+
+/*
+   -----------------------------------------------------------------------------
+   SEÇÃO SERVIÇOS - Estilos para a seção de serviços/doações
+   -----------------------------------------------------------------------------
+*/
+
+/* Fundo da seção Serviços */
+.servicos.secao {
+    background-color: var(--cor-fundo-medio); /* Um tone de verde claro para a seção */
+}
+
+/* Contêiner dos cards de serviço: layout flexbox e espaçamento */
+.cards-servicos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem de linha em telas menores */
+    gap: var(--espacamento-grande); /* Aumenta o espaçamento entre os cards */
+    justify-content: center;
+    max-width: 1200px; /* Limita a largura do contêiner de cards */
+    width: 100%;
+}
+
+/* Card de serviço: estilo de caixa e efeito de hover */
+.card-servico {
+    flex: 1 1 280px; /* Permite que o card cresça/diminua, com base de 280px */
+    max-width: 340px; /* Largura máxima para evitar cards muito grandes */
+    background-color: var(--cor-texto-claro);
+    border-radius: 20px; /* Bordas mais arredondadas e modernas */
+    box-shadow: 0 8px 20px var(--cor-sombra-suave); /* Sombra mais elegante e profunda */
+    padding: 2rem; /* Mais padding interno */
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transições mais suaves */
+    cursor: default;
+}
+
+.card-servico:hover,
+.card-servico:focus-within {
+    transform: translateY(-12px); /* Elevação maior no hover */
+    box-shadow: 0 18px 40px var(--cor-sombra-media); /* Sombra mais pronunciada */
+}
+
+/* Imagem do card de serviço */
+.card-servico img {
+    width: 100%;
+    height: 220px; /* Altura fixa para as imagens dos cards */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 15px; /* Bordas arredondadas para a imagem */
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil na imagem */
+}
+
+/* Título do card de serviço */
+.card-servico h3 {
+    color: var(--cor-secundaria); /* Verde escuro */
+    margin-bottom: 1rem; /* Mais espaçamento */
+    font-size: 1.6rem; /* Título maior */
+    font-weight: 600;
 }
