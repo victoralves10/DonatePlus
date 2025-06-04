@@ -355,6 +355,7 @@ html {
     transition: width 0.6s ease-out 0.4s; /* Animação da largura com delay */
 }
 
+
 /*
    -----------------------------------------------------------------------------
    SEÇÃO INÍCIO - Estilos específicos para a seção inicial
@@ -414,7 +415,7 @@ html {
 
 /* Fundo da seção Serviços */
 .servicos.secao {
-    background-color: var(--cor-fundo-medio); /* Um tone de verde claro para a seção */
+    background-color: var(--cor-fundo-medio); /* Um tom de verde claro para a seção */
 }
 
 /* Contêiner dos cards de serviço: layout flexbox e espaçamento */
@@ -462,4 +463,116 @@ html {
     margin-bottom: 1rem; /* Mais espaçamento */
     font-size: 1.6rem; /* Título maior */
     font-weight: 600;
+}
+
+/*
+   -----------------------------------------------------------------------------
+   SEÇÃO SOBRE NÓS - Estilos para a seção da equipe
+   -----------------------------------------------------------------------------
+*/
+
+/* Fundo da seção Sobre Nós */
+.sobre.secao {
+    background: linear-gradient(to right, var(--cor-fundo-medio), var(--cor-fundo-claro)); /* Gradiente suave */
+}
+
+/* Texto de introdução da seção Sobre Nós */
+.texto-sobre {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+/* Grid de integrantes: layout flexbox e scroll horizontal se necessário */
+.grid-integrantes {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem de linha */
+    gap: var(--espacamento-grande); /* Aumenta o espaçamento */
+    justify-content: center;
+    max-width: 1200px; /* Limita a largura */
+    width: 100%;
+}
+
+/* Card de integrante: estilo de caixa e efeito de hover */
+.card-integrante {
+    background-color: var(--cor-texto-claro);
+    border-radius: 20px;
+    padding: 2rem;
+    flex: 1 1 250px; /* Base de 250px */
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 20px var(--cor-sombra-suave);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-integrante:hover,
+.card-integrante:focus-within {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 40px var(--cor-sombra-media);
+}
+
+/* Imagem do integrante */
+.card-integrante img {
+    width: 140px; /* Tamanho fixo para a imagem */
+    height: 140px;
+    border-radius: 50%; /* Imagem circular */
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid var(--cor-destaque); /* Borda amarela */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.card-integrante:hover img {
+    border-color: var(--cor-principal); /* Mudar cor da borda no hover */
+}
+
+/* Título e parágrafo do integrante */
+.card-integrante h3 {
+    color: var(--cor-secundaria);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-integrante p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+}
+
+/* Ícones de redes sociais */
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem; /* Ícones maiores */
+}
+
+.redes-sociais a {
+    color: var(--cor-secundaria); /* Cor dos ícones */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: var(--cor-destaque); /* Mudar cor no hover */
+    transform: scale(1.2) translateY(-3px); /* Efeito de elevação e zoom */
+}
+
+
+/*
+   -----------------------------------------------------------------------------
+   RODAPÉ - Estilos para o rodapé do site
+   -----------------------------------------------------------------------------
+*/
+footer {
+    background-color: var(--cor-cinza-suave); /* Fundo cinza suave */
+    color: var(--cor-texto-escuro);
+    text-align: center;
+    padding: var(--espacamento-medio) var(--espacamento-grande);
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+    width: 100%;
+    border-top: 1px solid var(--cor-borda-suave);
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03); /* Sombra sutil acima */
 }
