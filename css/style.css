@@ -562,6 +562,167 @@ html {
 
 /*
    -----------------------------------------------------------------------------
+   SEÇÃO FAQ - Estilos para a seção de perguntas frequentes
+   -----------------------------------------------------------------------------
+*/
+.faq.secao {
+    background-color: var(--cor-fundo-medio); /* Fundo suave */
+}
+
+.container-faq {
+    max-width: 800px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.item-faq {
+    background-color: var(--cor-texto-claro);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px var(--cor-sombra-suave);
+    overflow: hidden; /* Garante que a resposta não vaze */
+    transition: box-shadow 0.3s ease;
+}
+
+.item-faq:hover {
+    box-shadow: 0 8px 18px var(--cor-sombra-media);
+}
+
+.pergunta-faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem; /* Mais padding */
+    background-color: var(--cor-principal); /* Cor principal para o botão */
+    color: var(--cor-texto-claro);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho */
+}
+
+.pergunta-faq:hover,
+.pergunta-faq:focus {
+    background-color: var(--cor-secundaria); /* Verde mais escuro no hover */
+    outline: none;
+}
+
+.pergunta-faq i {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.pergunta-faq[aria-expanded="true"] i {
+    transform: rotate(180deg); /* Gira a seta para cima quando expandido */
+}
+
+.resposta-faq {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2rem; /* Padding horizontal, vertical 0 inicialmente */
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-texto-escuro);
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out, opacity 0.4s ease-out;
+    opacity: 0;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.resposta-faq[aria-expanded="true"] {
+    max-height: 200px; /* Altura máxima arbitrária para expansão */
+    padding: 1.5rem 2rem; /* Padding vertical ao expandir */
+    opacity: 1;
+}
+
+/*
+   -----------------------------------------------------------------------------
+   SEÇÃO CONTATO - Estilos para o formulário de contato
+   -----------------------------------------------------------------------------
+*/
+.contato.secao {
+    background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-medio)); /* Gradiente suave */
+}
+
+#form-contato {
+    background-color: var(--cor-texto-claro);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--cor-sombra-media);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Espaçamento entre os campos */
+    text-align: left; /* Alinha labels à esquerda */
+}
+
+#form-contato label {
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    display: block; /* Garante que o label ocupe sua própria linha */
+}
+
+#form-contato input[type="text"],
+#form-contato input[type="email"],
+#form-contato textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--cor-borda-suave);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--cor-texto-escuro);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Importante para o padding */
+}
+
+#form-contato input:focus,
+#form-contato textarea:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 3px rgba(22, 123, 97, 0.2); /* Sombra suave no foco */
+    outline: none;
+}
+
+#form-contato textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+}
+
+#form-contato .btn-enviar {
+    align-self: center; /* Centraliza o botão no formulário */
+    width: auto; /* Largura automática para o botão */
+    padding: 0.8rem 2.5rem;
+    margin-top: 1.5rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--cor-sombra-suave);
+}
+
+#form-contato .btn-enviar:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px var(--cor-sombra-media);
+}
+
+#form-contato .btn-enviar:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*
+   -----------------------------------------------------------------------------
    RODAPÉ - Estilos para o rodapé do site
    -----------------------------------------------------------------------------
 */
