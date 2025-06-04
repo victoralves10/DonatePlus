@@ -1,130 +1,199 @@
+// Aguarda o carregamento completo do DOM antes de executar o script
 document.addEventListener('DOMContentLoaded', () => {
-    // --------------------------------------------------------------------
-    // Lógica para o Menu Hamburguer (Mobile)
-    // --------------------------------------------------------------------
-    const btnMenuMobile = document.querySelector('.btn-menu-mobile');
-    const linksNavegacao = document.querySelector('.links-navegacao');
 
-    if (btnMenuMobile && linksNavegacao) {
-        btnMenuMobile.addEventListener('click', () => {
-            linksNavegacao.classList.toggle('active'); // Adiciona/remove a classe 'active'
-            btnMenuMobile.querySelector('i').classList.toggle('bx-menu'); // Troca ícone para fechar
-            btnMenuMobile.querySelector('i').classList.toggle('bx-x');    // Troca ícone para abrir
-            // Adiciona ou remove aria-expanded para acessibilidade
-            const isExpanded = btnMenuMobile.getAttribute('aria-expanded') === 'true' || false;
-            btnMenuMobile.setAttribute('aria-expanded', !isExpanded);
-        });
+  const barraNavegacao = document.querySelector('.barra-navegacao'); // Navbar
+  const btnMenuMobile = document.querySelector('.btn-menu-mobile'); // Botão hamburguer
+  const linksNavegacao = document.querySelector('.links-navegacao'); // Lista de links
+  const btnTopo = document.querySelector('.btn-topo'); // Botão "Voltar ao Topo"
+  const perguntasFaq = document.querySelectorAll('.pergunta-faq'); // Botões de pergunta do FAQ
+  const formDoacao = document.getElementById('form-doacao'); // Formulário de Doação
+  const formContato = document.getElementById('form-contato'); // Formulário de Contato
 
-        // Fechar o menu ao clicar em um link (apenas em mobile)
-        linksNavegacao.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (linksNavegacao.classList.contains('active')) {
-                    linksNavegacao.classList.remove('active');
-                    btnMenuMobile.querySelector('i').classList.remove('bx-x');
-                    btnMenuMobile.querySelector('i').classList.add('bx-menu');
-                    btnMenuMobile.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
+  // Seleciona todos os elementos que terão animação ao rolar
+  const elementosAnimar = document.querySelectorAll('.secao h2, .texto-sobre, .card-servico, .card-integrante, #form-contato, #form-doacao');
+
+
+  // -------------------------------------------------------------------
+  // EFEITO DE SCROLL NA BARRA DE NAVEGAÇÃO - Adiciona/remove sombra
+  // -------------------------------------------------------------------
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) { // Se a página for rolada mais de 50 pixels
+      barraNavegacao.classList.add('rolada'); // Adiciona a classe 'rolada' (para aplicar sombra)
+    } else {
+      barraNavegacao.classList.remove('rolada'); // Remove a classe 'rolada' se estiver no topo
     }
+  });
 
-    // --------------------------------------------------------------------
-    // Lógica para o Acordeão (FAQ)
-    // --------------------------------------------------------------------
-    const faqItems = document.querySelectorAll('.item-faq');
 
-    faqItems.forEach(item => {
-        const pergunta = item.querySelector('.pergunta-faq');
-        const resposta = item.querySelector('.resposta-faq');
-
-        pergunta.addEventListener('click', () => {
-            // Verifica se a pergunta clicada já está aberta
-            const isOpen = pergunta.getAttribute('aria-expanded') === 'true';
-
-            // Fecha todas as outras perguntas abertas
-            faqItems.forEach(otherItem => {
-                const otherPergunta = otherItem.querySelector('.pergunta-faq');
-                const otherResposta = otherItem.querySelector('.resposta-faq');
-                if (otherPergunta !== pergunta && otherPergunta.getAttribute('aria-expanded') === 'true') {
-                    otherPergunta.setAttribute('aria-expanded', 'false');
-                    otherResposta.style.maxHeight = 0;
-                    otherResposta.setAttribute('aria-expanded', 'false'); // Remove a classe para transição suave de padding/opacity
-                    otherResposta.style.padding = '0 2rem'; // Redefine padding
-                    otherResposta.style.opacity = 0;
-                }
-            });
-
-            // Alterna a pergunta clicada
-            pergunta.setAttribute('aria-expanded', !isOpen);
-            resposta.setAttribute('aria-expanded', !isOpen); // Adiciona para a transição
-            if (isOpen) {
-                resposta.style.maxHeight = 0;
-                resposta.style.padding = '0 2rem'; // Redefine padding
-                resposta.style.opacity = 0;
-            } else {
-                // Define uma altura que seja maior que o conteúdo, mas com transição
-                // Isso é um truque. A altura exata seria scrollHeight, mas complica a transição CSS.
-                // Usar um valor grande com overflow hidden funciona para a maioria dos casos.
-                resposta.style.maxHeight = resposta.scrollHeight + 'px'; // Ajusta a altura real do conteúdo
-                resposta.style.padding = '1.5rem 2rem'; // Adiciona padding
-                resposta.style.opacity = 1;
-            }
-        });
+  // -------------------------------------------------------------------
+  // MENU MOBILE (HAMBURGUER) - Abre e fecha
+  // -------------------------------------------------------------------
+  if (btnMenuMobile && linksNavegacao) {
+    btnMenuMobile.addEventListener('click', () => {
+      // Alterna a classe 'menu-aberto' na lista de links
+      linksNavegacao.classList.toggle('menu-aberto');
+      // Altera o ícone do botão: 'bx-x' (X) para fechar, 'bx-menu' (hamburguer) para abrir
+      const icone = btnMenuMobile.querySelector('i');
+      if (linksNavegacao.classList.contains('menu-aberto')) {
+        icone.classList.remove('bx-menu');
+        icone.classList.add('bx-x');
+        btnMenuMobile.setAttribute('aria-label', 'Fechar menu');
+      } else {
+        icone.classList.remove('bx-x');
+        icone.classList.add('bx-menu');
+        btnMenuMobile.setAttribute('aria-label', 'Abrir menu');
+      }
     });
 
-    // --------------------------------------------------------------------
-    // Lógica para Scroll Top Button (Botão Voltar ao Topo)
-    // --------------------------------------------------------------------
-    const btnTopo = document.createElement('a');
-    btnTopo.href = '#inicio';
-    btnTopo.classList.add('btn-topo');
-    btnTopo.setAttribute('aria-label', 'Voltar ao topo');
-    btnTopo.innerHTML = '<i class="bx bx-up-arrow-alt"></i>';
-    document.body.appendChild(btnTopo);
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) { // Mostra o botão após 300px de scroll
-            btnTopo.classList.add('visivel');
-        } else {
-            btnTopo.classList.remove('visivel');
+    // Fecha o menu mobile quando um link é clicado
+    linksNavegacao.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (linksNavegacao.classList.contains('menu-aberto')) {
+          linksNavegacao.classList.remove('menu-aberto');
+          const icone = btnMenuMobile.querySelector('i');
+          icone.classList.remove('bx-x');
+          icone.classList.add('bx-menu');
+          btnMenuMobile.setAttribute('aria-label', 'Abrir menu');
         }
+      });
     });
+  }
 
-    // --------------------------------------------------------------------
-    // Lógica para Adicionar Sombra na Navbar ao Rolar
-    // --------------------------------------------------------------------
-    const navbar = document.querySelector('.barra-navegacao');
 
+  // -------------------------------------------------------------------
+  // BOTÃO "VOLTAR AO TOPO" - Mostra/esconde e rola suavemente
+  // -------------------------------------------------------------------
+  if (btnTopo) {
+    // Mostra/esconde o botão conforme a posição do scroll
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // Adiciona sombra após 50px de scroll
-            navbar.classList.add('rolada');
-        } else {
-            navbar.classList.remove('rolada');
+      if (window.scrollY > 400) { // Se a página for rolada mais de 400 pixels
+        btnTopo.classList.add('visivel'); // Adiciona a classe 'visivel' para torná-lo visível (com fade-in)
+      } else {
+        btnTopo.classList.remove('visivel'); // Remove a classe 'visivel' para escondê-lo (com fade-out)
+      }
+    });
+
+    // Rolagem suave ao topo ao clicar no botão
+    btnTopo.addEventListener('click', e => {
+      e.preventDefault(); // Previne o comportamento padrão do link (salto instantâneo)
+      window.scrollTo({
+        top: 0, // Rola para o topo da página
+        behavior: 'smooth' // Ativa a rolagem suave
+      });
+    });
+  }
+
+
+  // -------------------------------------------------------------------
+  // FAQ (PERGUNTAS FREQUENTES) - Abre/fecha respostas e fecha as outras
+  // -------------------------------------------------------------------
+  perguntasFaq.forEach(pergunta => {
+    pergunta.addEventListener('click', () => {
+      const itemFaq = pergunta.parentElement; // Pega o elemento pai (o '.item-faq')
+      // Verifica se o item clicado já está aberto (atributo 'aria-expanded' é 'true')
+      const estaAberta = itemFaq.getAttribute('aria-expanded') === 'true';
+
+      // Fecha todas as outras respostas abertas (melhora a usabilidade)
+      perguntasFaq.forEach(p => {
+        const outroItemFaq = p.parentElement; // Pega o item FAQ pai de cada pergunta
+        // Se não for o item clicado atualmente E se estiver aberto
+        if (outroItemFaq !== itemFaq && outroItemFaq.getAttribute('aria-expanded') === 'true') {
+          outroItemFaq.setAttribute('aria-expanded', 'false'); // Fecha-o
         }
+      });
+
+      // Alterna o estado do item clicado
+      if (estaAberta) {
+        itemFaq.setAttribute('aria-expanded', 'false'); // Se estava aberta, fecha
+      } else {
+        itemFaq.setAttribute('aria-expanded', 'true'); // Se estava fechada, abre
+      }
     });
+  });
 
-    // --------------------------------------------------------------------
-    // Lógica para Animação de Elementos ao Rolar (Scroll Reveal)
-    // --------------------------------------------------------------------
-    const elementosAnimar = document.querySelectorAll('.animar-ao-rolar, .secao h2, .texto-sobre, .card-servico, .card-integrante');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visivel');
-                observer.unobserve(entry.target); // Para de observar depois de animar
-            }
-        });
-    }, {
-        threshold: 0.1, // Elemento visível em 10% da viewport
-        rootMargin: '0px 0px -100px 0px' // Começa a animar 100px antes de entrar totalmente
+  // -------------------------------------------------------------------
+  // ANIMAÇÃO DE ELEMENTOS AO ROLAR (Intersection Observer)
+  // -------------------------------------------------------------------
+  // Cria um novo Intersection Observer
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { // Se o elemento estiver visível na tela
+        entry.target.classList.add('visivel'); // Adiciona a classe 'visivel' para disparar a animação
+        observer.unobserve(entry.target); // Deixa de observar o elemento após a animação
+      }
     });
+  }, {
+    threshold: 0.1, // A animação dispara quando 10% do elemento está visível
+    rootMargin: '0px 0px -100px 0px' // Começa a observar um pouco antes de o elemento entrar totalmente na viewport
+  });
 
-    elementosAnimar.forEach(elemento => {
-        observer.observe(elemento);
+  // Observa cada elemento que deve ser animado
+  elementosAnimar.forEach(elemento => {
+    observer.observe(elemento);
+  });
+
+
+  // -------------------------------------------------------------------
+  // VALIDAÇÃO E REDIRECIONAMENTO DO FORMULÁRIO DE DOAÇÃO
+  // -------------------------------------------------------------------
+  if (formDoacao) {
+    formDoacao.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const nome = formDoacao['nome-doacao'].value.trim(); // ID do campo 'nome-doacao'
+      const email = formDoacao['email-doacao'].value.trim(); // ID do campo 'email-doacao'
+      const tipo = formDoacao['tipo-doacao'].value; // ID do select 'tipo-doacao'
+      const valor = formDoacao['valor-doacao'].value.trim(); // ID do campo 'valor-doacao'
+
+      if (!nome || !email || !tipo || !valor) {
+        alert('Por favor, preencha todos os campos antes de prosseguir com a doação.');
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Por favor, insira um endereço de e-mail válido.');
+        return;
+      }
+
+      const valorNumerico = parseFloat(valor.replace(',', '.')); // Lida com vírgula como separador decimal
+      if (isNaN(valorNumerico) || valorNumerico <= 0) {
+        alert('Por favor, insira um valor de doação válido (apenas números e maior que zero).');
+        return;
+      }
+
+      // Se todas as validações passarem, redireciona
+      window.location.href = 'pagamento.html';
     });
+  }
 
-    // Adiciona a classe 'animar-ao-rolar' a alguns elementos para garantir que o observer os encontre
-    // (Pode ser feito diretamente no HTML, mas aqui garantimos que eles estão sendo observados)
-    document.querySelectorAll('.conteudo-inicio, .inicio img').forEach(el => el.classList.add('animar-ao-rolar'));
-});
+  // -------------------------------------------------------------------
+  // VALIDAÇÃO SIMPLES DO FORMULÁRIO DE CONTATO (apenas um alert)
+  // -------------------------------------------------------------------
+  if (formContato) {
+    formContato.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const nome = formContato['nome-contato'].value.trim(); // ID do campo 'nome-contato'
+      const email = formContato['email-contato'].value.trim(); // ID do campo 'email-contato'
+      const mensagem = formContato['mensagem-contato'].value.trim(); // ID do campo 'mensagem-contato'
+
+      if (!nome || !email || !mensagem) {
+        alert('Por favor, preencha todos os campos do formulário de contato.');
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Por favor, insira um endereço de e-mail válido.');
+        return;
+      }
+
+      // Simula o envio
+      alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+      formContato.reset(); // Limpa o formulário
+    });
+  }
+
+}); // Fim do DOMContentLoaded

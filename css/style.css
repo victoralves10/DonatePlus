@@ -1,234 +1,234 @@
 /*
-   -----------------------------------------------------------------------------
-   VARIÁVEIS CSS - Para cores, fontes e tamanhos padrões
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  VARIÁVEIS CSS - Para cores, fontes e tamanhos padrões
+  -----------------------------------------------------------------------------
 */
 :root {
-    /* Cores */
-    --cor-principal: #167B61; /* Verde primário */
-    --cor-secundaria: #055E47; /* Verde mais escuro para textos e destaques */
-    --cor-destaque: #FFC107; /* Amarelo vibrante para botões e detalhes */
-    --cor-fundo-claro: #D6F6E5; /* Verde bem clarinho para seções */
-    --cor-fundo-medio: #E0F8EB; /* Outro verde claro */
-    --cor-fundo-escuro: #B0E6CC; /* Verde para gradientes */
-    --cor-texto-claro: #fff; /* Texto branco */
-    --cor-texto-escuro: #333; /* Texto padrão escuro */
-    --cor-cinza-suave: #f1f1f1; /* Fundo do rodapé */
-    --cor-borda-suave: #ddd; /* Borda leve */
-    --cor-sombra-suave: rgba(0, 0, 0, 0.08); /* Sombra padrão */
-    --cor-sombra-media: rgba(0, 0, 0, 0.15); /* Sombra mais forte */
-    --cor-sombra-profunda: rgba(0, 0, 0, 0.25); /* Sombra para elevação */
+  /* Cores */
+  --cor-principal: #167B61; /* Verde primário */
+  --cor-secundaria: #055E47; /* Verde mais escuro para textos e destaques */
+  --cor-destaque: #FFC107; /* Amarelo vibrante para botões e detalhes */
+  --cor-fundo-claro: #D6F6E5; /* Verde bem clarinho para seções */
+  --cor-fundo-medio: #E0F8EB; /* Outro verde claro */
+  --cor-fundo-escuro: #B0E6CC; /* Verde para gradientes */
+  --cor-texto-claro: #fff; /* Texto branco */
+  --cor-texto-escuro: #333; /* Texto padrão escuro */
+  --cor-cinza-suave: #f1f1f1; /* Fundo do rodapé */
+  --cor-borda-suave: #ddd; /* Borda leve */
+  --cor-sombra-suave: rgba(0, 0, 0, 0.08); /* Sombra padrão */
+  --cor-sombra-media: rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+  --cor-sombra-profunda: rgba(0, 0, 0, 0.25); /* Sombra para elevação */
 
-    /* Fontes */
-    --fonte-principal: 'Inter', sans-serif;
+  /* Fontes */
+  --fonte-principal: 'Inter', sans-serif;
 
-    /* Espaçamentos */
-    --espacamento-pequeno: 0.8rem;
-    --espacamento-medio: 1.5rem;
-    --espacamento-grande: 2.5rem;
+  /* Espaçamentos */
+  --espacamento-pequeno: 0.8rem;
+  --espacamento-medio: 1.5rem;
+  --espacamento-grande: 2.5rem;
 }
 
 
 /*
-   -----------------------------------------------------------------------------
-   GLOBAL & BASE - Estilos de reset, fonte e comportamento geral do documento
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  GLOBAL & BASE - Estilos de reset, fonte e comportamento geral do documento
+  -----------------------------------------------------------------------------
 */
 
 /* Reset básico de margin, padding e box-sizing para consistência */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Estilos padrão do corpo: fonte, cor, alinhamento e layout flexbox */
 body {
-    font-family: var(--fonte-principal);
-    color: var(--cor-texto-escuro);
-    line-height: 1.6;
-    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
-    display: flex;
-    flex-direction: column; /* Organiza o conteúdo em coluna (navbar, seções, rodapé) */
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto-escuro);
+  line-height: 1.6;
+  min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo em coluna (navbar, seções, rodapé) */
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
 /* Estilos padrão para links: sem sublinhado e herança de cor */
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Efeito de hover/focus para links */
 a:hover,
 a:focus {
-    color: var(--cor-secundaria); /* Cor verde mais escura para hover/focus em links gerais */
-    outline: none;
+  color: var(--cor-secundaria); /* Cor verde mais escura para hover/focus em links gerais */
+  outline: none;
 }
 
 /* Comportamento de scroll suave para navegação por âncoras */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Esconder elementos visualmente mas mantê-los para leitores de tela */
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /*
-   -----------------------------------------------------------------------------
-   ANIMAÇÕES PADRÃO
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  ANIMAÇÕES PADRÃO
+  -----------------------------------------------------------------------------
 */
 
 /* Animação de fade-in e slide-up para elementos que aparecem na rolagem */
 @keyframes fadeInSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Animação para elementos que aparecem da esquerda */
 @keyframes fadeInSlideLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Animação para elementos que aparecem da direita */
 @keyframes fadeInSlideRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Classe base para aplicar animações de rolagem (controlada por JS) */
 .animar-ao-rolar {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .animar-ao-rolar.visivel {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*
-   -----------------------------------------------------------------------------
-   BARRA DE NAVEGAÇÃO - Estilos para a barra de navegação principal
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  BARRA DE NAVEGAÇÃO - Estilos para a barra de navegação principal
+  -----------------------------------------------------------------------------
 */
 
 /* Configuração da barra de navegação: fixada no topo, largura total e layout flexbox */
 .barra-navegacao {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: var(--cor-principal); /* Cor de fundo verde */
-    display: flex;
-    justify-content: space-between; /* Espaça logo e links */
-    align-items: center; /* Centraliza verticalmente */
-    padding: var(--espacamento-pequeno) var(--espacamento-grande); /* Padding lateral maior */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    transition: box-shadow 0.3s ease-in-out; /* Transição para a sombra no scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--cor-principal); /* Cor de fundo verde */
+  display: flex;
+  justify-content: space-between; /* Espaça logo e links */
+  align-items: center; /* Centraliza verticalmente */
+  padding: var(--espacamento-pequeno) var(--espacamento-grande); /* Padding lateral maior */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  transition: box-shadow 0.3s ease-in-out; /* Transição para a sombra no scroll */
 }
 
 /* Adiciona sombra à barra de navegação quando a página é rolada (classe adicionada via JS) */
 .barra-navegacao.rolada {
-    box-shadow: 0 4px 12px var(--cor-sombra-media); /* Sombra mais suave e elegante */
+  box-shadow: 0 4px 12px var(--cor-sombra-media); /* Sombra mais suave e elegante */
 }
 
 /* Estilos para o logo (texto e ícone) */
 .logo {
-    font-weight: 700;
-    font-size: 1.6rem; /* Logo um pouco maior */
-    color: var(--cor-texto-claro);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: transform 0.3s ease; /* Transição para efeito no hover */
+  font-weight: 700;
+  font-size: 1.6rem; /* Logo um pouco maior */
+  color: var(--cor-texto-claro);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform 0.3s ease; /* Transição para efeito no hover */
 }
 
 .logo:hover {
-    transform: scale(1.02); /* Pequeno zoom no hover */
+  transform: scale(1.02); /* Pequeno zoom no hover */
 }
 
 .logo i {
-    color: var(--cor-destaque); /* Ícone em tom de amarelo para contraste */
-    font-size: 2rem; /* Ícone um pouco maior */
-    transition: transform 0.3s ease; /* Transição para um pequeno efeito no hover */
+  color: var(--cor-destaque); /* Ícone em tom de amarelo para contraste */
+  font-size: 2rem; /* Ícone um pouco maior */
+  transition: transform 0.3s ease; /* Transição para um pequeno efeito no hover */
 }
 
 .logo:hover i {
-    transform: rotate(10deg) scale(1.1); /* Rotação e zoom sutil no hover */
+  transform: rotate(10deg) scale(1.1); /* Rotação e zoom sutil no hover */
 }
 
 /* Links da barra de navegação: layout flexbox para alinhamento horizontal */
 .links-navegacao {
-    list-style: none;
-    display: flex;
-    gap: var(--espacamento-medio);
+  list-style: none;
+  display: flex;
+  gap: var(--espacamento-medio);
 }
 
 .links-navegacao li a {
-    font-weight: 500;
-    padding: 0.6rem var(--espacamento-pequeno); /* Mais padding nos links */
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Adiciona transição no transform */
-    color: var(--cor-texto-claro);
-    position: relative; /* Para o efeito de sublinhado animado */
+  font-weight: 500;
+  padding: 0.6rem var(--espacamento-pequeno); /* Mais padding nos links */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Adiciona transição no transform */
+  color: var(--cor-texto-claro);
+  position: relative; /* Para o efeito de sublinhado animado */
 }
 
 /* Efeito de hover/focus para os links da barra de navegação: sublinhado animado */
 .links-navegacao li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -3px;
-    left: 50%; /* Começa no centro */
-    transform: translateX(-50%); /* Garante que o sublinhado se expanda do centro */
-    background-color: var(--cor-destaque); /* Cor do sublinhado */
-    transition: width 0.3s ease-out; /* Animação da largura */
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 50%; /* Começa no centro */
+  transform: translateX(-50%); /* Garante que o sublinhado se expanda do centro */
+  background-color: var(--cor-destaque); /* Cor do sublinhado */
+  transition: width 0.3s ease-out; /* Animação da largura */
 }
 
 .links-navegacao li a:hover::after,
 .links-navegacao li a:focus::after {
-    width: 100%; /* Expande o sublinhado */
+  width: 100%; /* Expande o sublinhado */
 }
 
 .links-navegacao li a:hover,
 .links-navegacao li a:focus {
-    color: var(--cor-destaque); /* Cor do texto no hover/focus */
-    background-color: transparent; /* Remove background-color do hover para o efeito de sublinhado */
-    transform: translateY(-3px); /* Pequena elevação no hover */
+  color: var(--cor-destaque); /* Cor do texto no hover/focus */
+  background-color: transparent; /* Remove background-color do hover para o efeito de sublinhado */
+  transform: translateY(-3px); /* Pequena elevação no hover */
 }
 
 /* Estilo para o link da página atual na navegação */
@@ -243,497 +243,871 @@ html {
 
 /* Botão "Doe Agora": estilo distinto e efeito de hover */
 .btn-doar {
-    background-color: var(--cor-destaque); /* Amarelo vibrante */
-    color: var(--cor-principal) !important; /* Texto verde escuro */
-    padding: 0.7rem 1.6rem; /* Mais padding */
-    border-radius: 30px; /* Mais arredondado */
-    font-weight: 700; /* Mais negrito */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves */
-    cursor: pointer;
-    border: none;
-    text-align: center;
-    box-shadow: 0 3px 8px var(--cor-sombra-suave); /* Sombra inicial */
-    position: relative; /* Para o efeito de clique */
-    overflow: hidden; /* Garante que o pseudo-elemento não vaze */
+  background-color: var(--cor-destaque); /* Amarelo vibrante */
+  color: var(--cor-principal) !important; /* Texto verde escuro */
+  padding: 0.7rem 1.6rem; /* Mais padding */
+  border-radius: 30px; /* Mais arredondado */
+  font-weight: 700; /* Mais negrito */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves */
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  box-shadow: 0 3px 8px var(--cor-sombra-suave); /* Sombra inicial */
+  position: relative; /* Para o efeito de clique */
+  overflow: hidden; /* Garante que o pseudo-elemento não vaze */
 }
 
 .btn-doar:hover,
 .btn-doar:focus {
-    background-color: #FFD700; /* Amarelo um pouco mais claro no hover */
-    transform: translateY(-4px); /* Elevação sutil */
-    box-shadow: 0 8px 20px var(--cor-sombra-media); /* Sombra mais pronunciada */
-    outline: none;
+  background-color: #FFD700; /* Amarelo um pouco mais claro no hover */
+  transform: translateY(-4px); /* Elevação sutil */
+  box-shadow: 0 8px 20px var(--cor-sombra-media); /* Sombra mais pronunciada */
+  outline: none;
 }
 
 .btn-doar:active {
-    transform: translateY(-1px); /* "Afunda" o botão ao clicar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra menor */
+  transform: translateY(-1px); /* "Afunda" o botão ao clicar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra menor */
 }
 
 /* Efeito de "ripple" (onda) ao clicar no botão de doação */
 .btn-doar::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(1) translate(-50%, -50%);
-    transition: transform 0.5s, opacity 0.5s;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1) translate(-50%, -50%);
+  transition: transform 0.5s, opacity 0.5s;
 }
 
 .btn-doar:active::after {
-    transform: scale(20) translate(-50%, -50%);
-    opacity: 1;
-    transition: 0s; /* Reseta a transição para o clique instantâneo */
+  transform: scale(20) translate(-50%, -50%);
+  opacity: 1;
+  transition: 0s; /* Reseta a transição para o clique instantâneo */
 }
 
 
 /* Botão do Menu Mobile (Hamburguer) */
 .btn-menu-mobile {
-    display: none; /* Escondido por padrão, visível apenas em mobile */
-    background: none;
-    border: none;
-    font-size: 2.2rem; /* Ícone grande */
-    color: var(--cor-texto-claro);
-    cursor: pointer;
-    z-index: 1001; /* Acima da navbar */
-    transition: color 0.3s ease;
+  display: none; /* Escondido por padrão, visível apenas em mobile */
+  background: none;
+  border: none;
+  font-size: 2.2rem; /* Ícone grande */
+  color: var(--cor-texto-claro);
+  cursor: pointer;
+  z-index: 1001; /* Acima da navbar */
+  transition: color 0.3s ease;
 }
 
 .btn-menu-mobile:hover {
-    color: var(--cor-destaque);
+  color: var(--cor-destaque);
 }
 
 
 /*
-   -----------------------------------------------------------------------------
-   SEÇÕES GERAIS - Propriedades comuns a todas as seções
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  SEÇÕES GERAIS - Propriedades comuns a todas as seções
+  -----------------------------------------------------------------------------
 */
 
 /* Estilos base para todas as seções: altura, largura, centralização e padding */
 .secao {
-    min-height: 100vh; /* Ocupa a altura total da viewport */
-    width: 100vw;
-    max-width: 100vw;
-    margin: 0;
-    padding: 5rem var(--espacamento-grande); /* Aumenta o padding geral das seções */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza conteúdo verticalmente */
-    align-items: center; /* Centraliza conteúdo horizontalmente */
-    text-align: center;
-    box-sizing: border-box;
-    scroll-snap-align: start; /* Ajuda no "scroll snapping" */
+  min-height: 100vh; /* Ocupa a altura total da viewport */
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 5rem var(--espacamento-grande); /* Aumenta o padding geral das seções */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza conteúdo verticalmente */
+  align-items: center; /* Centraliza conteúdo horizontalmente */
+  text-align: center;
+  box-sizing: border-box;
+  scroll-snap-align: start; /* Ajuda no "scroll snapping" */
 }
 
 /* Títulos das seções */
 .secao h2 {
-    font-size: 3rem; /* Tamanho maior para os títulos */
-    margin-bottom: 3rem; /* Mais espaçamento abaixo do título */
-    color: var(--cor-secundaria); /* Cor mais escura para os títulos */
-    font-weight: 700;
-    position: relative; /* Para o efeito de sublinhado decorativo */
-    padding-bottom: 10px; /* Espaço para o ::after */
+  font-size: 3rem; /* Tamanho maior para os títulos */
+  margin-bottom: 3rem; /* Mais espaçamento abaixo do título */
+  color: var(--cor-secundaria); /* Cor mais escura para os títulos */
+  font-weight: 700;
+  position: relative; /* Para o efeito de sublinhado decorativo */
+  padding-bottom: 10px; /* Espaço para o ::after */
+  opacity: 0; /* Esconde por padrão para animação */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+/* Classe para animar o título da seção ao aparecer */
+.secao h2.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Efeito de sublinhado decorativo para os títulos das seções */
 .secao h2::after {
-    content: '';
-    position: absolute;
-    width: 0; /* Começa com largura zero */
-    height: 5px; /* Espessura do sublinhado */
-    background-color: var(--cor-destaque); /* Cor do sublinhado */
-    bottom: 0; /* Posição abaixo do texto */
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza o sublinhado */
-    border-radius: 2.5px;
-    transition: width 0.6s ease-out 0.4s; /* Animação da largura com delay */
+  content: '';
+  position: absolute;
+  width: 0; /* Começa com largura zero */
+  height: 5px; /* Espessura do sublinhado */
+  background-color: var(--cor-destaque); /* Cor do sublinhado */
+  bottom: 0; /* Posição abaixo do texto */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza o sublinhado */
+  border-radius: 2.5px;
+  transition: width 0.6s ease-out 0.4s; /* Animação da largura com delay */
+}
+
+/* Animação do sublinhado quando o título está visível */
+.secao h2.visivel::after {
+  width: 100px; /* Largura final do sublinhado */
 }
 
 
 /*
-   -----------------------------------------------------------------------------
-   SEÇÃO INÍCIO - Estilos específicos para a seção inicial
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  SEÇÃO INÍCIO - Estilos específicos para a seção inicial
+  -----------------------------------------------------------------------------
 */
 
 /* Fundo da seção Início */
 .inicio.secao {
-    background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-escuro)); /* Gradiente suave */
-    padding-top: 8rem; /* Espaço para a barra de navegação fixa */
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
-    position: relative; /* Para potencial efeito de paralaxe ou sobreposição */
-    overflow: hidden; /* Para garantir que as animações não transbordem */
+  background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-escuro)); /* Gradiente suave */
+  padding-top: 8rem; /* Espaço para a barra de navegação fixa */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  position: relative; /* Para potencial efeito de paralaxe ou sobreposição */
+  overflow: hidden; /* Para garantir que as animações não transbordem */
 }
 
 /* Animação para o conteúdo da inicio */
 .conteudo-inicio {
-    text-align: center;
-    max-width: 900px; /* Limita a largura do texto */
+  text-align: center;
+  max-width: 900px; /* Limita a largura do texto */
+  animation: fadeInSlideUp 1s ease-out forwards; /* Aplica a animação */
+  /* forwards mantém o estado final da animação */
 }
 
 /* Título principal da Início */
 .inicio h1 {
-    font-size: 4rem; /* Título maior e impactante */
-    margin-bottom: var(--espacamento-medio); /* Mais espaçamento */
-    color: var(--cor-secundaria); /* Verde mais escuro */
-    line-height: 1.1;
-    font-weight: 800; /* Mais negrito */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil no texto */
+  font-size: 4rem; /* Título maior e impactante */
+  margin-bottom: var(--espacamento-medio); /* Mais espaçamento */
+  color: var(--cor-secundaria); /* Verde mais escuro */
+  line-height: 1.1;
+  font-weight: 800; /* Mais negrito */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil no texto */
 }
 
 /* Parágrafo da Início */
 .inicio p {
-    font-size: 1.4rem; /* Parágrafo maior */
-    margin-bottom: 3.5rem; /* Mais espaçamento */
-    color: #444;
-    max-width: 700px; /* Limita largura do parágrafo */
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 1.4rem; /* Parágrafo maior */
+  margin-bottom: 3.5rem; /* Mais espaçamento */
+  color: #444;
+  max-width: 700px; /* Limita largura do parágrafo */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Imagem da Início */
 .inicio img {
-    max-width: 70%; /* Ajusta o tamanho da imagem */
-    height: auto;
-    border-radius: 20px; /* Bordas mais arredondadas */
-    box-shadow: 0 15px 40px var(--cor-sombra-media); /* Sombra mais pronunciada e elegante */
-    transform-origin: center bottom; /* Origem para a animação de escala (se fosse usar) */
+  max-width: 70%; /* Ajusta o tamanho da imagem */
+  height: auto;
+  border-radius: 20px; /* Bordas mais arredondadas */
+  box-shadow: 0 15px 40px var(--cor-sombra-media); /* Sombra mais pronunciada e elegante */
+  animation: fadeInSlideUp 1.2s ease-out 0.2s forwards; /* Animação com delay */
+  transform-origin: center bottom; /* Origem para a animação de escala (se fosse usar) */
 }
 
 
 /*
-   -----------------------------------------------------------------------------
-   SEÇÃO SERVIÇOS - Estilos para a seção de serviços/doações
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  SEÇÃO SERVIÇOS - Estilos para a seção de serviços/doações
+  -----------------------------------------------------------------------------
 */
 
 /* Fundo da seção Serviços */
 .servicos.secao {
-    background-color: var(--cor-fundo-medio); /* Um tom de verde claro para a seção */
+  background-color: var(--cor-fundo-medio); /* Um tom de verde claro para a seção */
 }
 
 /* Contêiner dos cards de serviço: layout flexbox e espaçamento */
 .cards-servicos {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os cards quebrem de linha em telas menores */
-    gap: var(--espacamento-grande); /* Aumenta o espaçamento entre os cards */
-    justify-content: center;
-    max-width: 1200px; /* Limita a largura do contêiner de cards */
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem de linha em telas menores */
+  gap: var(--espacamento-grande); /* Aumenta o espaçamento entre os cards */
+  justify-content: center;
+  max-width: 1200px; /* Limita a largura do contêiner de cards */
+  width: 100%;
 }
 
 /* Card de serviço: estilo de caixa e efeito de hover */
 .card-servico {
-    flex: 1 1 280px; /* Permite que o card cresça/diminua, com base de 280px */
-    max-width: 340px; /* Largura máxima para evitar cards muito grandes */
-    background-color: var(--cor-texto-claro);
-    border-radius: 20px; /* Bordas mais arredondadas e modernas */
-    box-shadow: 0 8px 20px var(--cor-sombra-suave); /* Sombra mais elegante e profunda */
-    padding: 2rem; /* Mais padding interno */
-    text-align: center;
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transições mais suaves */
-    cursor: default;
+  flex: 1 1 280px; /* Permite que o card cresça/diminua, com base de 280px */
+  max-width: 340px; /* Largura máxima para evitar cards muito grandes */
+  background-color: var(--cor-texto-claro);
+  border-radius: 20px; /* Bordas mais arredondadas e modernas */
+  box-shadow: 0 8px 20px var(--cor-sombra-suave); /* Sombra mais elegante e profunda */
+  padding: 2rem; /* Mais padding interno */
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transições mais suaves */
+  cursor: default;
+  opacity: 0; /* Para animação de scroll */
+  transform: translateY(30px);
 }
+
+.card-servico.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-servico:nth-child(1).visivel { transition-delay: 0.1s; }
+.card-servico:nth-child(2).visivel { transition-delay: 0.2s; }
+.card-servico:nth-child(3).visivel { transition-delay: 0.3s; } /* Adicione se tiver 3 cards */
+
 
 .card-servico:hover,
 .card-servico:focus-within {
-    transform: translateY(-12px); /* Elevação maior no hover */
-    box-shadow: 0 18px 40px var(--cor-sombra-media); /* Sombra mais pronunciada */
+  transform: translateY(-12px); /* Elevação maior no hover */
+  box-shadow: 0 18px 40px var(--cor-sombra-media); /* Sombra mais pronunciada */
 }
 
 /* Imagem do card de serviço */
 .card-servico img {
-    width: 100%;
-    height: 220px; /* Altura fixa para as imagens dos cards */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 15px; /* Bordas arredondadas para a imagem */
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil na imagem */
+  width: 100%;
+  height: 220px; /* Altura fixa para as imagens dos cards */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 15px; /* Bordas arredondadas para a imagem */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil na imagem */
 }
 
 /* Título do card de serviço */
 .card-servico h3 {
-    color: var(--cor-secundaria); /* Verde escuro */
-    margin-bottom: 1rem; /* Mais espaçamento */
-    font-size: 1.6rem; /* Título maior */
-    font-weight: 600;
+  color: var(--cor-secundaria); /* Verde escuro */
+  margin-bottom: 1rem; /* Mais espaçamento */
+  font-size: 1.6rem; /* Título maior */
+  font-weight: 600;
 }
 
+
 /*
-   -----------------------------------------------------------------------------
-   SEÇÃO SOBRE NÓS - Estilos para a seção da equipe
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  SEÇÃO SOBRE NÓS - Estilos para a seção da equipe
+  -----------------------------------------------------------------------------
 */
 
 /* Fundo da seção Sobre Nós */
 .sobre.secao {
-    background: linear-gradient(to right, var(--cor-fundo-medio), var(--cor-fundo-claro)); /* Gradiente suave */
+  background: linear-gradient(to right, var(--cor-fundo-medio), var(--cor-fundo-claro)); /* Gradiente suave */
 }
 
 /* Texto de introdução da seção Sobre Nós */
 .texto-sobre {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
-    max-width: 800px;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  opacity: 0; /* Para animação de scroll */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+.texto-sobre.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Grid de integrantes: layout flexbox e scroll horizontal se necessário */
 .grid-integrantes {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os cards quebrem de linha */
-    gap: var(--espacamento-grande); /* Aumenta o espaçamento */
-    justify-content: center;
-    max-width: 1200px; /* Limita a largura */
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem de linha */
+  gap: var(--espacamento-grande); /* Aumenta o espaçamento */
+  justify-content: center;
+  max-width: 1200px; /* Limita a largura */
+  width: 100%;
 }
 
 /* Card de integrante: estilo de caixa e efeito de hover */
 .card-integrante {
-    background-color: var(--cor-texto-claro);
-    border-radius: 20px;
-    padding: 2rem;
-    flex: 1 1 250px; /* Base de 250px */
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0 8px 20px var(--cor-sombra-suave);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: var(--cor-texto-claro);
+  border-radius: 20px;
+  padding: 2rem;
+  flex: 1 1 250px; /* Base de 250px */
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 20px var(--cor-sombra-suave);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0; /* Para animação de scroll */
+  transform: translateY(30px);
 }
+
+.card-integrante.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-integrante:nth-child(1).visivel { transition-delay: 0.1s; }
+.card-integrante:nth-child(2).visivel { transition-delay: 0.2s; }
+.card-integrante:nth-child(3).visivel { transition-delay: 0.3s; }
+
 
 .card-integrante:hover,
 .card-integrante:focus-within {
-    transform: translateY(-12px);
-    box-shadow: 0 18px 40px var(--cor-sombra-media);
+  transform: translateY(-12px);
+  box-shadow: 0 18px 40px var(--cor-sombra-media);
 }
 
-/* Imagem do integrante */
+/* Imagem do integrante (redonda) */
 .card-integrante img {
-    width: 140px; /* Tamanho fixo para a imagem */
-    height: 140px;
-    border-radius: 50%; /* Imagem circular */
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 4px solid var(--cor-destaque); /* Borda amarela */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+  width: 140px; /* Um pouco maior */
+  height: 140px; /* Um pouco maior */
+  object-fit: cover;
+  border-radius: 50%; /* Torna a imagem redonda */
+  margin-bottom: 1.5rem;
+  border: 5px solid var(--cor-fundo-escuro); /* Borda verde clara para destacar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.card-integrante:hover img {
-    border-color: var(--cor-principal); /* Mudar cor da borda no hover */
-}
-
-/* Título e parágrafo do integrante */
+/* Título do integrante */
 .card-integrante h3 {
-    color: var(--cor-secundaria);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  color: var(--cor-secundaria);
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
-.card-integrante p {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 1.2rem;
-}
-
-/* Ícones de redes sociais */
+/* Links de redes sociais */
 .redes-sociais {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    font-size: 2rem; /* Ícones maiores */
+  display: flex;
+  justify-content: center;
+  gap: var(--espacamento-medio); /* Aumenta o espaçamento */
+  margin-top: 1rem;
 }
 
+/* Ícones de redes sociais e efeito de hover */
 .redes-sociais a {
-    color: var(--cor-secundaria); /* Cor dos ícones */
-    transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 2rem; /* Ícones maiores */
+  color: #666;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.redes-sociais a:hover {
-    color: var(--cor-destaque); /* Mudar cor no hover */
-    transform: scale(1.2) translateY(-3px); /* Efeito de elevação e zoom */
+.redes-sociais a:hover,
+.redes-sociais a:focus {
+  color: var(--cor-destaque); /* Ícones em amarelo no hover */
+  transform: translateY(-5px) scale(1.1); /* Elevação e zoom */
 }
 
 
 /*
-   -----------------------------------------------------------------------------
-   SEÇÃO FAQ - Estilos para a seção de perguntas frequentes
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  SEÇÃO FAQ - Estilos para a seção de Perguntas Frequentes
+  -----------------------------------------------------------------------------
 */
+
+/* Fundo da seção FAQ */
 .faq.secao {
-    background-color: var(--cor-fundo-medio); /* Fundo suave */
+  background-color: var(--cor-fundo-claro);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+  padding: 5rem var(--espacamento-grande); /* Mais padding */
 }
 
+/* Contêiner para os itens do FAQ para limitar a largura e centralizar */
 .container-faq {
-    max-width: 800px;
-    width: 100%;
-    margin-top: 2rem;
+  width: 100%;
+  max-width: 850px; /* Largura máxima para o bloco de perguntas (um pouco maior) */
+  animation: fadeInSlideUp 0.8s ease-out forwards; /* Animação ao carregar */
 }
 
+/* Item de FAQ (pergunta e resposta) */
 .item-faq {
-    background-color: var(--cor-texto-claro);
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 10px var(--cor-sombra-suave);
-    overflow: hidden; /* Garante que a resposta não vaze */
-    transition: box-shadow 0.3s ease;
+  background-color: var(--cor-texto-claro);
+  border-radius: 15px; /* Bordas mais arredondadas */
+  margin-bottom: var(--espacamento-medio); /* Mais espaçamento entre os itens */
+  box-shadow: 0 6px 15px var(--cor-sombra-suave); /* Sombra mais suave */
+  overflow: hidden; /* Garante que o conteúdo não "vaze" */
+  display: block; /* Garante que o item ocupe a largura total */
+  width: 100%; /* Ocupa toda a largura disponível no container-faq */
+  transition: box-shadow 0.3s ease; /* Transição para a sombra no hover */
+  border: 1px solid rgba(22, 123, 97, 0.1); /* Borda sutil */
 }
 
 .item-faq:hover {
-    box-shadow: 0 8px 18px var(--cor-sombra-media);
+  box-shadow: 0 12px 25px var(--cor-sombra-media); /* Sombra mais pronunciada no hover */
 }
 
+/* Botão da pergunta do FAQ: estilo e ícone de seta */
 .pergunta-faq {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 1.5rem 2rem; /* Mais padding */
-    background-color: var(--cor-principal); /* Cor principal para o botão */
-    color: var(--cor-texto-claro);
-    font-size: 1.2rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 10px; /* Bordas arredondadas */
-    box-sizing: border-box; /* Garante que padding não aumente o tamanho */
+  width: 100%; /* Garante que o botão preencha o item-faq */
+  background: none;
+  border: none;
+  padding: 1.4rem 2rem; /* Mais padding para um toque mais "premium" */
+  font-size: 1.25rem; /* Fonte um pouco maior */
+  font-weight: 600;
+  color: var(--cor-principal);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left; /* Alinha o texto da pergunta à esquerda */
+  transition: background-color 0.2s ease; /* Transição para o background no hover */
 }
 
-.pergunta-faq:hover,
+.pergunta-faq:hover {
+  background-color: #f7fdfb; /* Fundo suave no hover */
+}
+
 .pergunta-faq:focus {
-    background-color: var(--cor-secundaria); /* Verde mais escuro no hover */
-    outline: none;
+  outline: 3px solid var(--cor-destaque); /* Outline em amarelo no focus */
+  outline-offset: 2px; /* Afasta o outline da borda */
+  border-radius: 12px; /* Mantém o arredondamento */
 }
 
 .pergunta-faq i {
-    font-size: 1.8rem;
-    transition: transform 0.3s ease;
+  font-size: 1.8rem; /* Ícone um pouco maior */
+  color: var(--cor-principal); /* Cor do ícone */
+  transition: transform 0.3s ease;
 }
 
-.pergunta-faq[aria-expanded="true"] i {
-    transform: rotate(180deg); /* Gira a seta para cima quando expandido */
-}
-
+/* Resposta do FAQ: escondida por padrão e expansão com transição */
 .resposta-faq {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 2rem; /* Padding horizontal, vertical 0 inicialmente */
-    background-color: var(--cor-texto-claro);
-    color: var(--cor-texto-escuro);
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out, opacity 0.4s ease-out;
-    opacity: 0;
-    text-align: justify;
-    line-height: 1.8;
+  max-height: 0; /* Esconde a resposta */
+  overflow: hidden; /* Garante que o conteúdo não seja visível */
+  transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), padding 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição mais lenta e suave */
+  padding: 0 2rem; /* Padding vertical inicial zero */
+  color: #555; /* Cor de texto mais suave */
+  border-top: 1px solid #e9e9e9; /* Borda mais clara */
+  font-size: 1.05rem;
+  line-height: 1.8; /* Aumenta o line-height para melhor leitura */
+  text-align: left; /* Alinha o texto da resposta à esquerda */
 }
 
-.resposta-faq[aria-expanded="true"] {
-    max-height: 200px; /* Altura máxima arbitrária para expansão */
-    padding: 1.5rem 2rem; /* Padding vertical ao expandir */
-    opacity: 1;
+/* Quando o FAQ está expandido (controlado via JS mudando aria-expanded) */
+.item-faq[aria-expanded="true"] .resposta-faq {
+  max-height: 700px; /* Aumenta a altura máxima para acomodar mais conteúdo (pode ajustar) */
+  padding: 1.2rem 2rem 1.8rem; /* Padding vertical no estado expandido (mais padding abaixo) */
 }
+
+/* Gira a seta quando o FAQ está expandido */
+.item-faq[aria-expanded="true"] .pergunta-faq i {
+  transform: rotate(180deg);
+  color: var(--cor-destaque); /* Mudar a cor da seta quando expandido */
+}
+
 
 /*
-   -----------------------------------------------------------------------------
-   SEÇÃO CONTATO - Estilos para o formulário de contato
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  SEÇÃO CONTATO - Estilos para o formulário de contato e doação
+  -----------------------------------------------------------------------------
 */
+
+/* Fundo da seção Contato */
 .contato.secao {
-    background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-medio)); /* Gradiente suave */
+  background-color: var(--cor-fundo-escuro); /* Usa um tom de verde claro diferente */
 }
 
-#form-contato {
+/* Formulários de contato e doação: layout flexbox */
+form#form-contato,
+form#form-doacao {
+  max-width: 650px; /* Formulários um pouco mais largos */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-medio); /* Mais espaçamento entre os campos */
+  background-color: var(--cor-texto-claro);
+  padding: 3rem; /* Mais padding no formulário */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 10px 30px var(--cor-sombra-media); /* Sombra suave e profunda */
+  opacity: 0; /* Para animação de scroll */
+  transform: translateY(30px);
+}
+form#form-contato.visivel,
+form#form-doacao.visivel {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+/* Rótulos dos campos do formulário */
+label {
+  font-weight: 600;
+  color: #444;
+  text-align: left; /* Alinha o rótulo à esquerda */
+  margin-bottom: 0.4rem; /* Pequeno espaçamento entre label e input */
+  display: block; /* Garante que o label ocupe sua própria linha */
+  font-size: 1.05rem;
+}
+
+/* Estilos para campos de input, select e textarea */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  padding: 1.1rem 1.4rem; /* Mais padding */
+  font-size: 1.05rem;
+  border: 2px solid var(--cor-borda-suave); /* Borda mais visível */
+  border-radius: 10px; /* Mais arredondado */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  width: 100%; /* Garante que ocupem a largura total do formulário */
+}
+
+/* Efeito de focus para campos do formulário */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--cor-principal); /* Borda verde no focus */
+  box-shadow: 0 0 0 4px rgba(22, 123, 97, 0.2); /* Sombra suave no focus */
+  outline: none;
+}
+
+/* Textarea redimensionável verticalmente */
+textarea {
+  resize: vertical;
+  min-height: 120px; /* Altura mínima para o textarea */
+}
+
+/* Botão "Enviar" (para o formulário de contato) */
+.btn-enviar {
+  background-color: var(--cor-principal);
+  color: var(--cor-texto-claro);
+  border: none;
+  padding: 1rem 2.5rem; /* Mais padding para o botão */
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.15rem;
+  margin-top: 1.5rem; /* Mais espaçamento do campo anterior */
+  align-self: center; /* Centraliza o botão no formulário */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-enviar:hover,
+.btn-enviar:focus {
+  background-color: var(--cor-secundaria);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.btn-enviar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/*
+  -----------------------------------------------------------------------------
+  RODAPÉ E ELEMENTOS FLUTUANTES
+  -----------------------------------------------------------------------------
+*/
+
+/* Botão "Voltar ao Topo": fixado na tela, redondo e com sombra */
+.btn-topo {
+  position: fixed;
+  bottom: 30px; /* Mais afastado da borda */
+  right: 30px; /* Mais afastado da borda */
+  background-color: var(--cor-destaque);
+  color: var(--cor-principal); /* Ícone verde no botão amarelo */
+  padding: 1rem 1.3rem; /* Aumenta o padding para um círculo maior */
+  border-radius: 50%;
+  font-size: 2rem; /* Ícone maior */
+  box-shadow: 0 6px 15px var(--cor-sombra-media);
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.4s ease; /* Adiciona transição de opacidade */
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0; /* Esconde o botão por padrão */
+  visibility: hidden; /* Garante que não seja interativo quando escondido */
+}
+
+/* Efeito de hover/focus para o botão "Voltar ao Topo" */
+.btn-topo:hover,
+.btn-topo:focus {
+  background-color: #FFD700; /* Amarelo mais claro no hover */
+  transform: translateY(-5px); /* Elevação sutil */
+  box-shadow: 0 10px 25px var(--cor-sombra-profunda);
+  outline: none;
+}
+
+/* Classe para mostrar o botão (adicionada via JS) */
+.btn-topo.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Rodapé: fundo, alinhamento e sombra sutil */
+footer {
+  background-color: var(--cor-cinza-suave);
+  text-align: center;
+  padding: 1.8rem var(--espacamento-grande); /* Mais padding */
+  font-size: 0.95rem; /* Fonte um pouco maior */
+  color: #666;
+  margin-top: auto; /* Empurra o rodapé para o final da página flexbox */
+  width: 100%;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
+  font-weight: 500;
+}
+
+
+/*
+  -----------------------------------------------------------------------------
+  SEÇÃO DOAÇÃO (ESTILOS ESPECÍFICOS)
+  -----------------------------------------------------------------------------
+*/
+.doacao.secao {
+  background: linear-gradient(to right, var(--cor-fundo-claro), var(--cor-fundo-medio)); /* Gradiente suave */
+}
+
+.texto-doacao {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  animation: fadeInSlideUp 0.8s ease-out forwards; /* Animação ao carregar */
+}
+
+
+/*
+  -----------------------------------------------------------------------------
+  SEÇÃO PAGAMENTO (ESTILOS ESPECÍFICOS)
+  -----------------------------------------------------------------------------
+*/
+/* Fundo da seção Pagamento */
+.pagamento.secao {
+  background: linear-gradient(to right, var(--cor-fundo-medio), var(--cor-fundo-escuro)); /* Gradiente suave */
+}
+
+/* Estilos para o contêiner do QR Code */
+.qr-pix {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--cor-principal); /* Borda mais grossa e verde */
+    padding: 1.8rem; /* Mais padding */
+    border-radius: 15px; /* Mais arredondado */
     background-color: var(--cor-texto-claro);
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px var(--cor-sombra-media);
-    max-width: 600px;
+    box-shadow: 0 8px 20px var(--cor-sombra-media); /* Sombra mais elegante */
+    max-width: 350px; /* Limita a largura do QR Code */
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem; /* Espaçamento entre os campos */
-    text-align: left; /* Alinha labels à esquerda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#form-contato label {
-    font-weight: 600;
-    color: var(--cor-secundaria);
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-    display: block; /* Garante que o label ocupe sua própria linha */
+.qr-pix:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px var(--cor-sombra-profunda);
 }
 
-#form-contato input[type="text"],
-#form-contato input[type="email"],
-#form-contato textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid var(--cor-borda-suave);
-    border-radius: 8px;
-    font-size: 1rem;
-    color: var(--cor-texto-escuro);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box; /* Importante para o padding */
+.qr-pix img {
+    display: block;
+    width: 100%; /* Imagem preenche o contêiner */
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas para a imagem do QR */
 }
 
-#form-contato input:focus,
-#form-contato textarea:focus {
-    border-color: var(--cor-principal);
-    box-shadow: 0 0 0 3px rgba(22, 123, 97, 0.2); /* Sombra suave no foco */
-    outline: none;
+.pagamento p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 1rem;
 }
 
-#form-contato textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
-    min-height: 120px;
-}
-
-#form-contato .btn-enviar {
-    align-self: center; /* Centraliza o botão no formulário */
-    width: auto; /* Largura automática para o botão */
-    padding: 0.8rem 2.5rem;
-    margin-top: 1.5rem;
-    background-color: var(--cor-principal);
-    color: var(--cor-texto-claro);
-    border: none;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px var(--cor-sombra-suave);
-}
-
-#form-contato .btn-enviar:hover {
-    background-color: var(--cor-secundaria);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px var(--cor-sombra-media);
-}
-
-#form-contato .btn-enviar:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.pagamento p strong {
+  color: var(--cor-secundaria); /* Destaca a chave PIX */
+  font-weight: 700;
 }
 
 /*
-   -----------------------------------------------------------------------------
-   RODAPÉ - Estilos para o rodapé do site
-   -----------------------------------------------------------------------------
+  -----------------------------------------------------------------------------
+  RESPONSIVIDADE - Ajustes para telas menores (max-width: 768px)
+  -----------------------------------------------------------------------------
 */
-footer {
-    background-color: var(--cor-cinza-suave); /* Fundo cinza suave */
-    color: var(--cor-texto-escuro);
-    text-align: center;
-    padding: var(--espacamento-medio) var(--espacamento-grande);
-    margin-top: auto; /* Empurra o rodapé para o final da página */
+
+@media (max-width: 768px) {
+  /* Variáveis ajustadas para mobile (opcional, mas bom para granularidade) */
+  :root {
+    --espacamento-pequeno: 0.6rem;
+    --espacamento-medio: 1rem;
+    --espacamento-grande: 1.5rem;
+  }
+
+  /* Navbar em Mobile */
+  .barra-navegacao {
+    padding: 0.5rem var(--espacamento-medio);
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+  .logo i {
+    font-size: 1.8rem;
+  }
+
+  /* Exibe o botão do menu hamburguer */
+  .btn-menu-mobile {
+    display: block;
+  }
+
+  /* Esconde os links de navegação por padrão em mobile */
+  .links-navegacao {
+    display: none;
+    flex-direction: column; /* Links empilhados */
+    position: absolute;
+    top: 100%; /* Abaixo da navbar */
+    left: 0;
     width: 100%;
-    border-top: 1px solid var(--cor-borda-suave);
+    background-color: var(--cor-principal); /* Fundo igual à navbar */
+    box-shadow: 0 8px 15px var(--cor-sombra-media);
+    padding: 1rem 0; /* Padding vertical */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória */
+    transition: max-height 0.3s ease-out; /* Animação de abertura */
+    max-height: 0; /* Escondido por padrão */
+    overflow: hidden;
+  }
+
+  /* Estilo para mostrar o menu mobile (adicionado via JS) */
+  .links-navegacao.menu-aberto {
+    max-height: 300px; /* Altura máxima para mostrar o menu (ajuste conforme necessário) */
+    display: flex; /* Garante que os links se tornem flexíveis novamente */
+  }
+
+  .links-navegacao li {
+    width: 100%;
+    text-align: center;
+  }
+  .links-navegacao li a {
+    padding: 0.8rem var(--espacamento-grande);
+    width: 100%;
+    display: block; /* Ocupa a largura total do item de lista */
+  }
+  .links-navegacao li a:hover,
+  .links-navegacao li a:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo leve no hover no menu mobile */
+  }
+  .links-navegacao li a::after {
+    display: none; /* Remove sublinhado animado em mobile */
+  }
+
+  .btn-doar {
+    padding: 0.5rem 1.2rem;
     font-size: 0.9rem;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03); /* Sombra sutil acima */
+  }
+
+  /* Ajustes nas Seções Gerais */
+  .secao {
+    padding: 4rem var(--espacamento-medio);
+  }
+  .secao h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .secao h2::after {
+    width: 80px; /* Sublinhado menor em mobile */
+  }
+
+  /* Seção Início em Mobile */
+  .inicio.secao {
+    padding-top: 7rem;
+  }
+  .inicio h1 {
+    font-size: 2.8rem;
+  }
+  .inicio p {
+    font-size: 1.1rem;
+  }
+  .inicio img {
+    max-width: 90%;
+  }
+
+  /* Cards de Serviço e Integrantes em Mobile */
+  .cards-servicos,
+  .grid-integrantes {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacamento-medio);
+  }
+  .card-servico,
+  .card-integrante {
+    max-width: 90%; /* Ocupa mais largura em mobile */
+    padding: 1.5rem;
+  }
+  .card-servico img {
+    height: 180px;
+  }
+  .card-integrante img {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* FAQ em Mobile */
+  .faq.secao {
+    padding: 3rem var(--espacamento-medio);
+  }
+  .container-faq {
+    max-width: 100%;
+  }
+  .item-faq {
+    border-radius: 10px;
+  }
+  .pergunta-faq {
+    font-size: 1.1rem;
+    padding: 1rem 1.2rem;
+  }
+  .pergunta-faq i {
+    font-size: 1.6rem;
+  }
+  .resposta-faq {
+    font-size: 0.95rem;
+    padding: 0 1.2rem;
+  }
+  .item-faq[aria-expanded="true"] .resposta-faq {
+    padding: 0.8rem 1.2rem 1.2rem;
+  }
+
+  /* Formulários em Mobile */
+  form#form-contato,
+  form#form-doacao {
+    padding: 2rem;
+    gap: var(--espacamento-pequeno);
+    max-width: 95%;
+  }
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+  textarea {
+    min-height: 100px;
+  }
+  .btn-enviar,
+  #btn-finalizar-doacao {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* Botão Voltar ao Topo em Mobile */
+  .btn-topo {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.7rem 1rem;
+    font-size: 1.6rem;
+  }
+
+  /* Seção Pagamento em Mobile */
+  .pagamento.secao {
+    padding: 3rem var(--espacamento-medio);
+  }
+  .qr-pix {
+    padding: 1.2rem;
+    max-width: 280px;
+  }
+  .pagamento p {
+    font-size: 1.05rem;
+  }
 }

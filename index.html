@@ -1,184 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DonatePlus - Doações para Desastres Extremos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DonatePlus - Doações para Desastres Extremos</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <header>
-        <nav class="barra-navegacao" role="navigation" aria-label="Menu principal">
-            <a href="index.html" class="logo" aria-label="Página inicial DonatePlus">
-                <i class='bx bxs-shopping-basket'></i> DonatePlus
+
+  <header>
+    <nav class="barra-navegacao" role="navigation" aria-label="Menu principal">
+      <a href="index.html" class="logo" aria-label="Página inicial DonatePlus">
+        <i class='bx bxs-shopping-basket'></i> DonatePlus
+      </a>
+      <ul class="links-navegacao">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="html/doacao.html" class="btn-doar" aria-label="Doe agora">Doe Agora</a></li>
+      </ul>
+      <button class="btn-menu-mobile" aria-label="Abrir menu">
+        <i class='bx bx-menu'></i>
+      </button>
+    </nav>
+  </header>
+
+
+  <main>
+    <section class="secao inicio" id="inicio">
+      <div class="conteudo-inicio">
+        <h1>Sua doação pode transformar vidas em desastres extremos</h1>
+        <p>Junte-se a nós para levar ajuda rápida e eficaz com o uso de drones entregando suprimentos onde mais
+          precisam.</p>
+        <img src="images/drone_levando_doações.webp" width="500" alt="Drone entregando doações em local de desastre" />
+      </div>
+    </section>
+
+    <section class="secao servicos" id="servicos">
+      <h2>Serviços</h2>
+      <div class="cards-servicos">
+        <article class="card-servico" tabindex="0">
+          <img src="images/imagem_doacao_alimentoscarro.jpg" alt="Doação de alimentos em caminhão" />
+          <h3>Doação de Alimentos</h3>
+          <p>Distribuímos alimentos para vítimas de desastres com rapidez e segurança.</p>
+        </article>
+        <article class="card-servico" tabindex="0">
+          <img src="images/imagem_doacao_roupas.jpg" alt="Doação de roupas empilhadas" />
+          <h3>Doação de Roupas</h3>
+          <p>Coletamos e entregamos roupas para quem perdeu tudo em desastres.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao sobre" id="sobre">
+      <h2>Sobre Nós</h2>
+      <p class="texto-sobre">Conheça os integrantes do projeto DonatePlus:</p>
+      <div class="grid-integrantes">
+
+        <article class="card-integrante" tabindex="0">
+          <img src="images/dudu.jpg" alt="Foto de Eduardo Batista Locaspi" />
+          <h3>Eduardo Batista Locaspi</h3>
+          <p>RM561713 - 1TDSPI</p>
+          <div class="redes-sociais">
+            <a href="https://github.com/Eduardo-Locaspi" target="_blank" rel="noopener"
+              aria-label="GitHub Eduardo Locaspi">
+              <i class='bx bxl-github'></i>
             </a>
-            <ul class="links-navegacao">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="doacao.html" class="btn-doar" aria-label="Doe agora">Doe Agora</a></li>
-            </ul>
-            <button class="btn-menu-mobile" aria-label="Abrir menu">
-                <i class='bx bx-menu'></i>
-            </button>
-        </nav>
-    </header>
+            <a href="https://www.linkedin.com/in/eduardo-locaspi-14119934b/" target="_blank" rel="noopener"
+              aria-label="LinkedIn Eduardo Locaspi">
+              <i class='bx bxl-linkedin'></i>
+            </a>
+          </div>
+        </article>
 
-    <main>
-        <section class="secao inicio" id="inicio">
-            <div class="conteudo-inicio">
-                <h1>Sua doação pode transformar vidas em desastres extremos</h1>
-                <p>Junte-se a nós para levar ajuda rápida e eficaz com o uso de drones entregando suprimentos onde mais precisam.</p>
-                <img src="images/drone_levando_doações.webp" width="500" alt="Drone entregando doações em local de desastre" />
-            </div>
-        </section>
+        <article class="card-integrante" tabindex="0">
+          <img src="images/vitin.jpg" alt="Foto de Victor Alves Lopes" />
+          <h3>Victor Alves Lopes</h3>
+          <p>RM561833 - 1TDSPI</p>
+          <div class="redes-sociais">
+            <a href="https://github.com/victoralves10" target="_blank" rel="noopener"
+              aria-label="GitHub Victor Alves Lopes">
+              <i class='bx bxl-github'></i>
+            </a>
+            <a href="https://www.linkedin.com/in/victor-alves-10587b2b6/" target="_blank" rel="noopener"
+              aria-label="LinkedIn Victor Alves Lopes">
+              <i class='bx bxl-linkedin'></i>
+            </a>
+          </div>
+        </article>
 
-        <section class="secao servicos" id="servicos">
-            <h2>Serviços</h2>
-            <div class="cards-servicos">
-                <article class="card-servico" tabindex="0">
-                    <img src="images/imagem_doacao_alimentoscarro.jpg" alt="Doação de alimentos em caminhão" />
-                    <h3>Doação de Alimentos</h3>
-                    <p>Distribuímos alimentos para vítimas de desastres com rapidez e segurança.</p>
-                </article>
-                <article class="card-servico" tabindex="0">
-                    <img src="images/imagem_doacao_roupas.jpg" alt="Doação de roupas empilhadas" />
-                    <h3>Doação de Roupas</h3>
-                    <p>Coletamos e entregamos roupas para quem perdeu tudo em desastres.</p>
-                </article>
-            </div>
-        </section>
+        <article class="card-integrante" tabindex="0">
+          <img src="images/alan.jpg" alt="Foto de Alan Jhorsh Mejia" />
+          <h3>Alan Jhorsh Mejia</h3>
+          <p>RM563857 - 1TDSPI</p>
+          <div class="redes-sociais">
+            <a href="https://github.com/AlanMejia0612" target="_blank" rel="noopener"
+              aria-label="GitHub Alan Jhorsh Mejia">
+              <i class='bx bxl-github'></i>
+            </a>
+            <a href="https://www.linkedin.com/in/alan-megia-46561a336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank" rel="noopener" aria-label="LinkedIn Alan Jhorsh Mejia">
+              <i class='bx bxl-linkedin'></i>
+            </a>
+          </div>
+        </article>
 
-        <section class="secao sobre" id="sobre">
-            <h2>Sobre Nós</h2>
-            <p class="texto-sobre">Conheça os integrantes do projeto DonatePlus:</p>
-            <div class="grid-integrantes">
+      </div>
+    </section>
 
-                <article class="card-integrante" tabindex="0">
-                    <img src="images/dudu.jpg" alt="Foto de Eduardo Batista Locaspi" />
-                    <h3>Eduardo Batista Locaspi</h3>
-                    <p>RM561713 - 1TDSPI</p>
-                    <div class="redes-sociais">
-                        <a href="https://github.com/Eduardo-Locaspi" target="_blank" rel="noopener" aria-label="GitHub Eduardo Locaspi">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/eduardo-locaspi-14119934b/" target="_blank" rel="noopener" aria-label="LinkedIn Eduardo Locaspi">
-                            <i class='bx bxl-linkedin'></i>
-                        </a>
-                    </div>
-                </article>
+    <section class="secao faq" id="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="container-faq">
+        <article class="item-faq">
+          <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq1" id="pergunta-faq1">
+            Como faço para doar?
+            <i class='bx bx-chevron-down'></i>
+          </button>
+          <div class="resposta-faq" id="resposta-faq1" role="region" aria-labelledby="pergunta-faq1">
+            Você pode clicar no botão “Doe Agora” e preencher o formulário para realizar sua doação. É rápido, seguro e
+            faz a diferença!
+          </div>
+        </article>
 
-                <article class="card-integrante" tabindex="0">
-                    <img src="images/vitin.jpg" alt="Foto de Victor Alves Lopes" />
-                    <h3>Victor Alves Lopes</h3>
-                    <p>RM561833 - 1TDSPI</p>
-                    <div class="redes-sociais">
-                        <a href="https://github.com/victoralves10" target="_blank" rel="noopener" aria-label="GitHub Victor Alves Lopes">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/victor-alves-10587b2b6/" target="_blank" rel="noopener" aria-label="LinkedIn Victor Alves Lopes">
-                            <i class='bx bxl-linkedin'></i>
-                        </a>
-                    </div>
-                </article>
+        <article class="item-faq">
+          <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq2" id="pergunta-faq2">
+            Quais tipos de doações são aceitas?
+            <i class='bx bx-chevron-down'></i>
+          </button>
+          <div class="resposta-faq" id="resposta-faq2" role="region" aria-labelledby="pergunta-faq2">
+            Aceitamos doações de alimentos não perecíveis, roupas em bom estado e itens de higiene pessoal. Sua ajuda,
+            em qualquer formato, é valiosa.
+          </div>
+        </article>
 
-                <article class="card-integrante" tabindex="0">
-                    <img src="images/alan.jpg" alt="Foto de Alan Jhorsh Mejia" />
-                    <h3>Alan Jhorsh Mejia</h3>
-                    <p>RM563857 - 1TDSPI</p>
-                    <div class="redes-sociais">
-                        <a href="https://github.com/AlanMejia0612" target="_blank" rel="noopener" aria-label="GitHub Alan Jhorsh Mejia">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/alan-megia-46561a336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn Alan Jhorsh Mejia">
-                            <i class='bx bxl-linkedin'></i>
-                        </a>
-                    </div>
-                </article>
+        <article class="item-faq">
+          <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq3" id="pergunta-faq3">
+            Como as doações são distribuídas?
+            <i class='bx bx-chevron-down'></i>
+          </button>
+          <div class="resposta-faq" id="resposta-faq3" role="region" aria-labelledby="pergunta-faq3">
+            As doações são cuidadosamente embaladas e entregues diretamente às famílias afetadas por desastres,
+            utilizando nossa rede de parceiros e voluntários, incluindo o uso de drones para locais de difícil acesso.
+          </div>
+        </article>
 
-            </div>
-        </section>
+        <article class="item-faq">
+          <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq4" id="pergunta-faq4">
+            Posso ser um voluntário?
+            <i class='bx bx-chevron-down'></i>
+          </button>
+          <div class="resposta-faq" id="resposta-faq4" role="region" aria-labelledby="pergunta-faq4">
+            Sim! Adoramos ter novos voluntários. Entre em contato conosco através do formulário na seção "Contato" e
+            informe seu interesse em participar.
+          </div>
+        </article>
 
-        <section class="secao faq" id="faq">
-            <h2>Perguntas Frequentes</h2>
-            <div class="container-faq">
-                <article class="item-faq">
-                    <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq1" id="pergunta-faq1">
-                        Como faço para doar?
-                        <i class='bx bx-chevron-down'></i>
-                    </button>
-                    <div class="resposta-faq" id="resposta-faq1" role="region" aria-labelledby="pergunta-faq1">
-                        Você pode clicar no botão “Doe Agora” e preencher o formulário para realizar sua doação. É rápido, seguro e faz a diferença!
-                    </div>
-                </article>
+        <article class="item-faq">
+          <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq5" id="pergunta-faq5">
+            É seguro doar online?
+            <i class='bx bx-chevron-down'></i>
+          </button>
+          <div class="resposta-faq" id="resposta-faq5" role="region" aria-labelledby="pergunta-faq5">
+            Com certeza! Utilizamos as mais modernas tecnologias de segurança para proteger seus dados e garantir que
+            sua doação chegue ao seu destino final.
+          </div>
+        </article>
+      </div>
+    </section>
 
-                <article class="item-faq">
-                    <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq2" id="pergunta-faq2">
-                        Quais tipos de doações são aceitas?
-                        <i class='bx bx-chevron-down'></i>
-                    </button>
-                    <div class="resposta-faq" id="resposta-faq2" role="region" aria-labelledby="pergunta-faq2">
-                        Aceitamos doações de alimentos não perecíveis, roupas em bom estado e itens de higiene pessoal. Sua ajuda, em qualquer formato, é valiosa.
-                    </div>
-                </article>
+    <section class="secao contato" id="contato">
+      <h2>Contato</h2>
+      <form id="form-contato" aria-label="Formulário de contato">
+        <label for="nome-contato">Nome:</label>
+        <input type="text" id="nome-contato" name="nome" placeholder="Seu nome completo" required
+          aria-required="true" />
 
-                <article class="item-faq">
-                    <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq3" id="pergunta-faq3">
-                        Como as doações são distribuídas?
-                        <i class='bx bx-chevron-down'></i>
-                    </button>
-                    <div class="resposta-faq" id="resposta-faq3" role="region" aria-labelledby="pergunta-faq3">
-                        As doações são cuidadosamente embaladas e entregues diretamente às famílias afetadas por desastres, utilizando nossa rede de parceiros e voluntários, incluindo o uso de drones para locais de difícil acesso.
-                    </div>
-                </article>
+        <label for="email-contato">Email:</label>
+        <input type="email" id="email-contato" name="email" placeholder="exemplo@email.com" required
+          aria-required="true" />
 
-                <article class="item-faq">
-                    <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq4" id="pergunta-faq4">
-                        Posso ser um voluntário?
-                        <i class='bx bx-chevron-down'></i>
-                    </button>
-                    <div class="resposta-faq" id="resposta-faq4" role="region" aria-labelledby="pergunta-faq4">
-                        Sim! Adoramos ter novos voluntários. Entre em contato conosco através do formulário na seção "Contato" e informe seu interesse em participar.
-                    </div>
-                </article>
+        <label for="mensagem-contato">Mensagem:</label>
+        <textarea id="mensagem-contato" name="mensagem" rows="5" placeholder="Sua mensagem aqui..." required
+          aria-required="true"></textarea>
 
-                <article class="item-faq">
-                    <button class="pergunta-faq" aria-expanded="false" aria-controls="resposta-faq5" id="pergunta-faq5">
-                        É seguro doar online?
-                        <i class='bx bx-chevron-down'></i>
-                    </button>
-                    <div class="resposta-faq" id="resposta-faq5" role="region" aria-labelledby="pergunta-faq5">
-                        Com certeza! Utilizamos as mais modernas tecnologias de segurança para proteger seus dados e garantir que sua doação chegue ao seu destino final.
-                    </div>
-                </article>
-            </div>
-        </section>
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </section>
+  </main>
 
-        <section class="secao contato" id="contato">
-            <h2>Contato</h2>
-            <form id="form-contato" aria-label="Formulário de contato">
-                <label for="nome-contato">Nome:</label>
-                <input type="text" id="nome-contato" name="nome" placeholder="Seu nome completo" required aria-required="true" />
+  <a href="#inicio" class="btn-topo" aria-label="Voltar ao topo">
+    <i class='bx bx-up-arrow-alt'></i>
+  </a>
 
-                <label for="email-contato">Email:</label>
-                <input type="email" id="email-contato" name="email" placeholder="exemplo@email.com" required aria-required="true" />
+  <footer>
+    <p>© 2025 DonatePlus - Todos os direitos reservados.</p>
+  </footer>
 
-                <label for="mensagem-contato">Mensagem:</label>
-                <textarea id="mensagem-contato" name="mensagem" rows="5" placeholder="Sua mensagem aqui..." required aria-required="true"></textarea>
+  <script src="js/script.js"></script>
 
-                <button type="submit" class="btn-enviar">Enviar</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 DonatePlus - Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
 </body>
+
 </html>
